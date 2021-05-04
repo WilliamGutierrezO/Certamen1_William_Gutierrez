@@ -23,16 +23,17 @@ const cargarTabla = ()=>{
         let r = reos[i];
 
         let tr =document.createElement("tr");
-
+    
         let tdNombre = document.createElement("td");
         let tdDetalle = document.createElement("td");
         let tdCiudad = document.createElement("td");
         let tdGravedad = document.createElement("td");
-
         tdNombre.innerText= r.nombre;
         
+    
+        
         let ncrimenes = document.createElement("i");
-        if((r.ncrimenes>=1) & (r.ncrimenes<=3)){
+        if((r.ncrimenes>=0) & (r.ncrimenes<=3)){
             gravedad ="Leve";
         }else if((r.ncrimenes>=4) & (r.ncrimenes<=6)){
             gravedad ="Grave";
@@ -42,16 +43,16 @@ const cargarTabla = ()=>{
             gravedad="Enemigo Social";
         }
 
-        if(gravedad = "Leve"){
+        if(gravedad == "Leve"){
             //leve <i class="fas fa-angry"></i>
             ncrimenes.classList.add("fas","fa-angry","text-success","fa-3x");
-        }else if(gravedad = "Grave"){
+        }else if(gravedad == "Grave"){
             //<i class="fas fa-tired"></i>
             ncrimenes.classList.add("fas","fa-tired","text-info","fa-3x");
-        }else if(gravedad = "Peligroso"){
+        }else if(gravedad == "Peligroso"){
             //<i class="fas fa-exclamation-triangle"></i>
-            ncrimenes.classList.add("fas","fa-exlamation-triangle","text-warning","fa-3x");
-        }else if(gravedad ="Enemigo Social"){
+            ncrimenes.classList.add("fas","fa-exclamation-triangle","text-warning","fa-3x");
+        }else if(gravedad =="Enemigo Social"){
             //<i class="fas fa-skull-crossbones"></i>
             ncrimenes.classList.add("fas","fa-skull-crossbones","text-danger","fa-3x");
         }
@@ -61,7 +62,7 @@ const cargarTabla = ()=>{
 
         tdDetalle.innerHTML = r.detalles;
 
-
+        
         tr.appendChild(tdNombre);
         tr.appendChild(tdDetalle);
         tr.appendChild(tdCiudad);
